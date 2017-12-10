@@ -1,0 +1,37 @@
+<!--
+  Generated template for the UpcomingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+
+    </button>
+    </ion-buttons>
+    <ion-title>upcoming</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+<ion-list>
+ <ion-item *ngFor="let item of items">
+      <h2>{{ item.month }} </h2>
+      <button
+         ion-button
+         color="primary"
+         item-right
+         (click)="viewEntry({ record: item })">View</button>
+   </ion-item>
+
+
+</ion-list>
+</ion-content>

@@ -4,14 +4,23 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
+<ion-content padding class="bg-image"> 
+ <h2>Welcome to Ion!</h2>
   <p>
     This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
+    that are going to.
   </p>
   <p>
     Take a look at the <code>src/pages/</code> directory to add or change tabs,
     update any existing page or create new pages.
   </p>
+
+  <button ion-button secondary (click)="LKS()" >Login page</button>
+
+ <button ion-button secondary (click)="LPF()" >Loading page</button>
+
+ <button ion-button secondary (click)="LPFPF()" >Forget password page</button>
+ <button ion-button secondary (click)="SENDN()" >send news page</button>
+ <button ion-button secondary (click)="CHAT()" >Chat page</button>
+
 </ion-content>

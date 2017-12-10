@@ -1,0 +1,111 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+   
+
+    <ion-title>login</ion-title>
+      </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bg-image">
+
+         <div style="align-content: center; width: 100%; align-items: center; text-align: center; ">
+          <label style="font-size: 25pt; font-weight: 5; text-align: center; align-items: center; align-content: center; "> Login to continue  </label>
+          </div>
+      <div style=" -webkit-border-radius: 20px;-moz-border-radius: 20px;border-radius: 20px;border:5px solid #404000;background:rgba(117,84,6,0.8); padding:2%; background:rgba(235,199,82,0.8); align-items: center; align-content: center; align-self: center; text-align: center; margin-top: 5%;">
+
+                              <div style="align-content: center; width: 100%; align-items: center; text-align: center; ">
+
+                        
+                                  <label style="font-size: 15pt;" for="username" class="control-label">Username</label>
+                                  </div>
+            <form [formGroup]="form" (ngSubmit)="saveEntry()">
+
+            <ion-list>
+               <ion-item-group>
+                     <ion-input
+                        type="text"
+                        placeholder="Enter a name..."
+                         formControlName="name"
+                        [(ngModel)]="technologyName"></ion-input>
+                
+               </ion-item-group>
+
+
+               <ion-item-group>
+                  <div style="align-content: center; width: 100%; align-items: center; text-align: center; margin-top: 5%; ">
+                                  <label style="font-size: 15pt;" for="password" class="control-label">Password</label>
+                                  </div>
+                  
+                     <ion-textarea
+                        placeholder="Description..."
+                        formControlName="description"
+                        rows="6"
+                        [(ngModel)]="technologyDescription"></ion-textarea>
+                
+               </ion-item-group>
+
+
+               
+
+            </ion-list>
+
+         
+                               <!--   <div style="align-content: center; width: 100%; align-items: center; text-align: center; margin-top: 5%; ">
+                                  <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
+                                  <span class="help-block"></span>
+                              </div>
+
+                              <div style="align-content: center; width: 100%; align-items: center; text-align: center; margin-top: 5%; ">
+                                  <label style="font-size: 15pt;" for="password" class="control-label">Password</label>
+                                  </div>
+                                  <div style="align-content: center; width: 100%; align-items: center; text-align: center; margin-top: 5%; ">
+                                  <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
+                                  <span class="help-block"></span>
+                              </div>
+                              
+                              <div style="align-content: center; width: 100%; align-items: center; text-align: center; margin-top: 5%; " >
+                                  <label>
+                                      <input style="font-size: 10pt;" type="checkbox" name="remember" id="remember"> Remember login
+                                  </label>
+                          </div>
+        </div> 
+
+<div style="margin-top: 10%; width: 100%; align-content: center; align-items: center; text-align: center;">
+   <ion-grid>
+  <ion-row>
+    <ion-col col-6><button ion-button secondary (click)="Log()" >Login</button></ion-col>
+    <ion-col col-6><button ion-button secondary >Cancel</button></ion-col>
+  </ion-row> 
+
+</ion-grid> -->
+
+<ion-item>
+                  <button
+                     ion-button
+                     color="primary"
+                   
+                     block
+                     [disabled]="!form.valid">Login</button>
+               </ion-item>
+               </form>
+
+<ion-item>
+<button
+                     ion-button
+                     color="primary"
+                     text-center
+                     block
+                     >Exit</button>
+               </ion-item>
+
+    </div>           
+</ion-content>

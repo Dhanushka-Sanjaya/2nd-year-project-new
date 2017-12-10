@@ -2,14 +2,24 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { HttpModule } from '@angular/http';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-
+import { LoginPage} from '../pages/login/login';
+import {LoadingPage} from '../pages/loading/loading';
+import {ForgotpwPage} from '../pages/forgotpw/forgotpw';
+import  {MainPage} from '../pages/main/main';
+import {SendnPage} from '../pages/sendn/sendn';
+import {ChatPage} from '../pages/chat/chat';
+import  {UpcomingPage} from '../pages/upcoming/upcoming';
+import  {PaymentPage} from '../pages/payment/payment';
+import  {MonthnewsPage} from '../pages/monthnews/monthnews';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import  {AuthProvider}  from '../providers/auth/auth';
 
 @NgModule({
   declarations: [
@@ -17,10 +27,20 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LoginPage,
+    LoadingPage,
+    ForgotpwPage,
+    MainPage,
+    SendnPage,
+    ChatPage,
+    UpcomingPage,
+    PaymentPage,
+    MonthnewsPage
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -29,12 +49,22 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LoginPage,
+    LoadingPage,
+    ForgotpwPage,
+    MainPage,
+    SendnPage,
+    ChatPage,
+    UpcomingPage,
+    PaymentPage,
+    MonthnewsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler}, 
+    AuthProvider
   ]
 })
 export class AppModule {}
