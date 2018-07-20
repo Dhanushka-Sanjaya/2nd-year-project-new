@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 
 import { SendnPage } from '../sendn/sendn';
-import { ContactPage } from '../contact/contact';
+import { AssinedPage } from '../assined/assined';
 import { UpcomingPage } from '../upcoming/upcoming';
+
+
 
 @Component({
   templateUrl: 'tabs.html'
@@ -10,8 +12,8 @@ import { UpcomingPage } from '../upcoming/upcoming';
 export class TabsPage {
 
   tab1Root = UpcomingPage;
-  tab2Root = SendnPage;
-  tab3Root = ContactPage;
+  tab2Root = AssinedPage;
+  tab3Root = SendnPage;
 
   constructor() {
 

@@ -20,56 +20,45 @@
   
         </div>
                              
-            <form [formGroup]="form" (ngSubmit)="Loginfun()">
+            <form [formGroup]="form" (ngSubmit)="Submit()">
                 <p style="font-size: 20px;" >Username</p>
             <ion-list>
                <ion-item>
                      <ion-input
 
                         type="text"
-                        placeholder="Enter the username..."
-                         formControlName="username"
-                        ></ion-input>
+                        placeholder="details"
+                         formControlName="description"
+                        [(ngModel)]="description"></ion-input>
                 </ion-item>
-              
 
-
-               <ion-item-group>
-                  <div style="align-content: center; width: 100%; align-items: center; text-align: center; margin-top: 5%; ">
-                                  <label style="font-size: 15pt;" for="password" class="control-label">Password</label>
-                                  </div>
-                  <ion-item>
+                <ion-item>
                      <ion-input
-                        type = "password"
-                        placeholder="password"
-                        formControlName="password"
-                      ></ion-input>
+
+                        type="text"
+                        placeholder="FTP file name"
+                         formControlName="ftp"
+                        [(ngModel)]="ftp"></ion-input>
                 </ion-item>
-               </ion-item-group>
+        
 
 
                
 
             </ion-list>
 
-      
-<button              ion-button
-                     color="#AA3219"
+
+                  <button
+                     ion-button
+                     color="primary"
+                   
                      block
-                     [disabled]="!form.valid" > Login </button>
-              
+                     [disabled]="!form.valid">Submit</button>
+               
                </form>
 
 
-            
-
-
-<button
-                     ion-button
-                     color= #0000
-                     text-center
-                     block
-                     >Exit</button>
+<button ion-button (click) = "closeModal()"> </button>
                
 
     </div>           

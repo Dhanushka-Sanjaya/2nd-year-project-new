@@ -1,0 +1,46 @@
+<!--
+  Generated template for the AssinedPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+
+    </button>
+    </ion-buttons>
+    <ion-title>Assigned News</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+
+
+<ion-list>
+ <ion-item *ngFor="let data of asidata">
+      <h2> {{data.title}} </h2>
+      <h3> {{data.date}} </h3>
+      <h4>{{data.venue}}</h4>
+      <button
+         ion-button
+         color="primary"
+         item-right
+         (click)="viewEntry({ record: item })">View</button>
+   
+<button
+         ion-button
+         color="primary"
+         item-right
+         (click)="completen({ record: item })">Complete</button>
+   </ion-item>
+
+
+</ion-list>
+</ion-content>

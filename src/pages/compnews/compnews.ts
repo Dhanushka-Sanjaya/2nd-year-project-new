@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
-import {TabsPage} from '../tabs/tabs';
-import { IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { IonicPage, NavController, NavParams, ViewController, ToastController } from 'ionic-angular';
+import { NeidProvider } from '../../providers/neid/neid';
 import { Http, Headers, RequestOptions } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import  {AuthProvider} from '../../providers/auth/auth';
 
-
 /**
- * Generated class for the LoginPage page.
+ * Generated class for the CompnewsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -16,13 +14,10 @@ import  {AuthProvider} from '../../providers/auth/auth';
 
 @IonicPage()
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html',
+  selector: 'page-compnews',
+  templateUrl: 'compnews.html',
 })
-export class LoginPage {
-
-
-	 // Define FormBuilder /model properties
+export class CompnewsPage {
    public form                   : FormGroup;
    public usernaname             : any;
    public password               : any;
@@ -36,27 +31,37 @@ export class LoginPage {
    public recordID               : any      = null;
    private baseURI               : string  = "http://35.154.251.230/ionic/";
 
-   
-   
-   // Initialise module classes
-   constructor(public navCtrl    : NavController,
+
+  constructor(public navCtrl    : NavController,
                public http       : Http,
                public NP         : NavParams,
                public fb         : FormBuilder,
                public toastCtrl  : ToastController,
-               public usname     : AuthProvider)
-   {
+               public usname     : AuthProvider,
+               public view       : ViewController,
+               public  uname     : any )  {
 
       // Create form builder validation rules
       this.form = fb.group({
-         "username"                  : ["", Validators.required],
-         "password"           : ["", Validators.required]
+         "description"                  : ["", Validators.required],
+         "ftp"           : ["", Validators.required]
       });
    }
+  
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+    console.log('ionViewDidLoad CompnewsPage');
   }
+
+  closeModal(){
+  	this.view.dismiss();
+  }
+
+
+
+// compnews.onDismiss((data =>{
+// 	console.log(data);
+// }))
 
 
 /*Log(){
@@ -76,16 +81,16 @@ sendNotification(message)  : void
    }
 
 
-sendreq(username, password)
+sendreq(description, ftp)
    {  
+     this.uname = this.usname.logname();
 
-      let body     :  string  = "key=create&username=" + username + "&password=" + password,
+      let body     :  string  = "&username=" + this.uname + "&news_id=" + + "&description=" + description + "&password=" + ftp,
           type     : string   = "application/x-www-form-urlencoded; charset=UTF-8",
           headers  : any      = new Headers({ 'Content-Type': type}),
           options  : any      = new RequestOptions({ headers: headers }),
-          url      : any      = this.baseURI + "login.php",
-          gvari : any = new AuthProvider;
-
+          url      : any      = this.baseURI + "send-news.php";
+         
       this.http.post(url, body, options)
       .map(res=>res.json())
       .subscribe(data => {
@@ -93,46 +98,39 @@ sendreq(username, password)
 
           this.usname.logname = data;
 
+          let cima : any = this.usname.logname;
           
 
         if (this.usname.logname == 1) 
           
-          {
-            this.sendNotification('Wrong Username or Password!');
+          {  
+            this.sendNotification('invalid information, news not sent');
          }
         else {
 
-          if (this.usname.logname == username) {
-          { this.navCtrl.push(TabsPage,{val: 'hisjs'})}
-          this.sendNotification('Welcome to news together !' + data );
-          
+          if (this.usname.logname == 0) {
+               this.view.dismiss()
+          this.sendNotification('News has been sent successfully');
+        
             }
           
           else {
                  this.sendNotification('Something went wrong!');  
-                  }
+         
 }
 
          
 
-        });} 
+       } });} 
         
 
 
-      
-  
 
-
-Loginfun(){
-      let username   : string = this.form.controls["username"].value,
-          password   : string    = this.form.controls["password"].value;
+Submit(){
+      let description   : string = this.form.controls["description"].value,
+          ftp   : string    = this.form.controls["ftp"].value;
       
       
-         this.sendreq(username, password);
+         this.sendreq(description, ftp);
       }
-
-
-
- 
-   
 }

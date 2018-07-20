@@ -20,18 +20,38 @@
 
 
 <ion-content padding>
-
+<ion-list>
+<ion-item *ngFor= "let gva of varia;">
+<h2> {{gva}}</h2>
+</ion-item>
+</ion-list>
 
 <ion-list>
- <ion-item *ngFor="let item of items">
-      <h2>{{ item.month }} </h2>
-      <button
+
+
+ <ion-item *ngFor="let data of data1;" > 
+ <h2> {{data.title}} </h2>
+ <h3> {{data.date}} </h3>
+ <h4>{{data.venue}}</h4>
+     
+
+
+    <button
          ion-button
          color="primary"
          item-right
-         (click)="viewEntry({ record: item })">View</button>
-   </ion-item>
+         (click)="accept({ record: data.news_id })">Accept</button>
 
+    <button
+         ion-button
+         color="primary"
+         item-right
+       (click)="viewEntry({ record: item })">View</button>
 
+  </ion-item>
 </ion-list>
+
+
+
+
 </ion-content>

@@ -7,19 +7,23 @@ import { HttpModule } from '@angular/http';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
+// import {CompnewsPage} from '../pages/compnews/compnews';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage} from '../pages/login/login';
 import {LoadingPage} from '../pages/loading/loading';
 import {ForgotpwPage} from '../pages/forgotpw/forgotpw';
 import  {MainPage} from '../pages/main/main';
 import {SendnPage} from '../pages/sendn/sendn';
-import {ChatPage} from '../pages/chat/chat';
+import {AssinedPage} from '../pages/assined/assined';
 import  {UpcomingPage} from '../pages/upcoming/upcoming';
 import  {PaymentPage} from '../pages/payment/payment';
 import  {MonthnewsPage} from '../pages/monthnews/monthnews';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import  {AuthProvider}  from '../providers/auth/auth';
+import { NeidProvider } from '../providers/neid/neid';
+
+
 
 @NgModule({
   declarations: [
@@ -33,10 +37,11 @@ import  {AuthProvider}  from '../providers/auth/auth';
     ForgotpwPage,
     MainPage,
     SendnPage,
-    ChatPage,
+    AssinedPage,
     UpcomingPage,
     PaymentPage,
     MonthnewsPage
+    // CompnewsPage
   ],
   imports: [
   BrowserModule,
@@ -55,16 +60,18 @@ import  {AuthProvider}  from '../providers/auth/auth';
     ForgotpwPage,
     MainPage,
     SendnPage,
-    ChatPage,
+    AssinedPage,
     UpcomingPage,
     PaymentPage,
     MonthnewsPage
+    // CompnewsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, 
-    AuthProvider
+    AuthProvider,
+    NeidProvider
   ]
 })
 export class AppModule {}

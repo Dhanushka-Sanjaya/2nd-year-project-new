@@ -6,7 +6,7 @@ import { LoadingPage} from '../loading/loading';
 import {ForgotpwPage} from '../forgotpw/forgotpw';
 import  {MainPage} from '../main/main';
 import {SendnPage} from '../sendn/sendn';
-import {ChatPage} from '../chat/chat';
+import {AssinedPage} from '../assined/assined';
 
 
 
@@ -47,7 +47,7 @@ SENDN(){
 	})
 }
 CHAT(){
-	this.navCtrl.push(ChatPage,{
+	this.navCtrl.push(AssinedPage,{
 		valct: 'loadchatpage'
 	})
 }
