@@ -1,3 +1,7 @@
+This app is an ionic app which allows cross platformcompatibility.
+This is used as an application which can be used by correspondents in different districts in Sri Lanka.
+
+
 This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
 
 ## How to use this template
